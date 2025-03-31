@@ -1,0 +1,51 @@
+Compiling 47 files with Solc 0.8.19
+Solc 0.8.19 finished in 5.39s
+Compiler run successful with warnings:
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.19;"
+--> src/Lottery.sol
+
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.19;"
+--> test/integration/RaffleIntegrationTest.t.sol
+
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.19;"
+--> test/test.t.sol
+
+Warning (2072): Unused local variable.
+   --> src/Raffle.sol:148:7:
+    |
+148 |       VRFV2PlusClient.RandomWordsRequest memory request =  VRFV2PlusClient.RandomWordsRequest(
+    |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (2072): Unused local variable.
+   --> src/Raffle.sol:163:8:
+    |
+163 |        uint256 requestId = VRFCoordinatorV2Interface(i_vrfCoordinator).requestRandomWords(
+    |        ^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/Raffle.sol:193:34:
+    |
+193 |     function fulfillRandomWords( uint256 requestId, uint256[] calldata randomWords
+    |                                  ^^^^^^^^^^^^^^^^^
+
+Analysing contracts...
+Running tests...
+
+Ran 7 tests for test/unit/RaffleUnitTest.t.sol:RaffleUnitTest
+[PASS] testCheckUpkeepReturnsFalseIfItHasNoBalance() (gas: 21001)
+[FAIL: EvmError: Revert] testCheckUpkeepReturnsFalseIfRaffleIsntOpen() (gas: 99369)
+[FAIL: EvmError: Revert] testDontAllowPlayersToEnterWhileRaffleIsCalculating() (gas: 99324)
+[PASS] testEmitsEventOnEntrance() (gas: 69617)
+[PASS] testRaffleIntializesInOpenState() (gas: 9324)
+[PASS] testRaffleRecordsPlayerWhenTheyEnter() (gas: 69449)
+[PASS] testRaffleRevertWhenYouDontPayEnough() (gas: 11231)
+Suite result: FAILED. 5 passed; 2 failed; 0 skipped; finished in 11.83ms (1.73ms CPU time)
+
+Ran 1 test suite in 15.83ms (11.83ms CPU time): 5 tests passed, 2 failed, 0 skipped (7 total tests)
+
+Failing tests:
+Encountered 2 failing tests in test/unit/RaffleUnitTest.t.sol:RaffleUnitTest
+[FAIL: EvmError: Revert] testCheckUpkeepReturnsFalseIfRaffleIsntOpen() (gas: 99369)
+[FAIL: EvmError: Revert] testDontAllowPlayersToEnterWhileRaffleIsCalculating() (gas: 99324)
+
+Encountered a total of 2 failing tests, 5 tests succeeded
